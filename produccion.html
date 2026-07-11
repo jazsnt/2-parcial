@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de producción del estudio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" 
+rel="stylesheet">
+
+<link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+  <div class="contenedor">
+
+    <!-- Encabezado: igual en las 3 paginas -->
+    <header class="encabezado">
+      <h1>Casey Reas</h1>
+      <p class="tagline">Código, sistemas y arte generativo contemporáneo</p>
+    </header>
+
+    <!-- Menu de navegacion: igual en las 3 paginas -->
+    <nav class="menu">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="trayectoria.html">Trayectoria</a></li>
+        <li><a href="produccion.html" class="activo">Producción</a></li>
+      </ul>
+    </nav>
+
+    <main>
+
+      <section class="intro-ejercicio">
+        <h2>Gestión de producción de instalaciones</h2>
+        <p>Esta herramienta permite calcular el costo de producción de las instalaciones interactivas del estudio de Casey Reas.</p>
+
+        <!-- Indicaciones de interaccion para el usuario -->
+        <div class="instrucciones" role="note">
+          <h3>Cómo usar esta herramienta</h3>
+          <ol>
+            <li>Indicá cuántas instalaciones vas a producir y confirmá.</li>
+            <li>Cargá el nombre, la cantidad de personas y los días de producción de cada instalación, una por una.</li>
+            <li>Completá las horas de trabajo por día y el valor del honorario por hora.</li>
+            <li>Presioná "Calcular resultados" para ver el costo diario del estudio, la instalación con más días de producción y su porcentaje sobre el costo total.</li>
+            <li>Usá "Reiniciar" si querés cargar todo de nuevo.</li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- Formulario 1: cantidad de instalaciones -->
+      <section class="formulario-paso" id="paso-cantidad">
+        <fieldset>
+          <legend>1. Cantidad de instalaciones</legend>
+          <label for="input-cantidad-instalaciones">¿Cuántas instalaciones vas a producir?</label>
+          <input type="number" id="input-cantidad-instalaciones" name="cantidadInstalaciones" min="1" required>
+          <button type="button" id="btn-confirmar-cantidad">Confirmar cantidad</button>
+          <p class="mensaje-error" id="error-cantidad"></p>
+        </fieldset>
+      </section>
+
+      <!-- Formulario 2: datos de cada instalacion (se repite hasta completar la cantidad) -->
+      <section class="formulario-paso" id="paso-instalaciones">
+        <fieldset id="fieldset-instalacion" disabled>
+          <legend>2. Datos de la instalación</legend>
+          <p id="contador-instalaciones">Instalaciones cargadas: 0 de 0</p>
+
+          <label for="input-nombre-instalacion">Nombre de la instalación</label>
+          <input type="text" id="input-nombre-instalacion" name="nombreInstalacion" required>
+
+          <label for="input-personas-instalacion">Cantidad de personas necesarias</label>
+          <input type="number" id="input-personas-instalacion" name="personasInstalacion" min="1" required>
+
+          <label for="input-dias-instalacion">Días estimados de producción</label>
+          <input type="number" id="input-dias-instalacion" name="diasInstalacion" min="1" required>
+
+          <button type="button" id="btn-agregar-instalacion">Agregar instalación</button>
+          <p class="mensaje-error" id="error-instalacion"></p>
+        </fieldset>
+      </section>
+
+      <!-- Formulario 3: datos generales del estudio -->
+      <section class="formulario-paso" id="paso-datos-generales">
+        <fieldset id="fieldset-datos-generales" disabled>
+          <legend>3. Datos generales del estudio</legend>
+
+          <label for="input-horas-dia">Horas de trabajo por día</label>
+          <input type="number" id="input-horas-dia" name="horasDia" min="1" required>
+
+          <label for="input-valor-hora">Valor del honorario por hora ($)</label>
+          <input type="number" id="input-valor-hora" name="valorHora" min="1" required>
+
+          <button type="button" id="btn-confirmar-datos-generales">Confirmar datos generales</button>
+          <p class="mensaje-error" id="error-datos-generales"></p>
+        </fieldset>
+      </section>
+
+      <!-- Calculo de resultados -->
+      <section class="formulario-paso" id="paso-calcular">
+        <button type="button" id="btn-calcular" disabled>Calcular resultados</button>
+      </section>
+
+      <!-- Resultados -->
+      <section class="resultados" id="seccion-resultados" hidden>
+        <h2>Resultados</h2>
+        <p id="resultado-costo-dia"></p>
+        <p id="resultado-mas-dias"></p>
+        <p id="resultado-porcentaje"></p>
+
+        <button type="button" id="btn-reiniciar">Reiniciar</button>
+      </section>
+
+    </main>
+
+    <!-- Pie de pagina: igual en las 3 paginas -->
+    <footer class="pie">
+      <p>Contacto: <a href="mailto:casey@artedigital.com">casey@artedigital.com</a></p>
+    </footer>
+
+  </div>
+
+  <!-- Solo se linkea el JS que esta pagina necesita  -->
+  <script src="js/produccion.js"></script>
+</body>
+</html>

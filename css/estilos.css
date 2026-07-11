@@ -1,0 +1,100 @@
+/* hoja de estilos */
+body { margin: 0;
+    background-image: url('../imagenes/fondo.png');}
+
+.box{background-color: rgb(196, 136, 171);
+      margin: 0 auto;
+    max-width: 1200px; }
+
+.cont, .cont2, .cont3, .cont4, .cont5
+ {
+    display: flex;
+    align-items: center;
+}
+.cont img, .cont3 img, .cont4 img {
+    padding: 2%;
+    width: 50%;
+    margin: 5%;
+}
+.cont2 img {
+    padding: 2%;
+    width: 50%;
+    margin-bottom: 5%;
+    margin-right: 5%;
+}
+.cont2 section 
+{
+    padding: 2%;
+    width: 50%  ; 
+}
+
+.cont section, .cont3 section, .cont4 section {
+    padding: 2%;
+    width: 50%  ;
+        margin: 5%;
+        
+}
+
+
+.cont5 {
+    padding: 2%;
+    width: 92%;
+    
+}
+
+
+h1 {
+    margin-bottom: 4%;
+    color: rgb(16, 17, 77);
+    background-color: rgb(173, 181, 255);
+    text-align: center;
+    font-family: 'Barlow', sans-serif;
+    font-size: 3rem;
+padding: 4rem;}
+
+    ul{ font-style: oblique;
+        list-style: none;
+        display: flex; 
+        justify-content: center;
+         font-size: 1.5rem; 
+         background-color: rgb(173, 181, 255);
+          gap: 8rem; 
+        padding: 1rem;
+    margin-left: 8%;
+margin-right: 8%;}
+
+ul li a:hover{color: rgb(235, 93, 178);}
+
+footer a {color: rgb(123, 124, 181);
+            text-decoration: none;
+            font-weight: bold;}
+          footer a:hover {color: rgb(143, 47, 158);
+            text-decoration: none;
+            font-weight: bold;}
+         
+               
+    
+    .azul {color: rgb(16, 17, 77);
+        text-align: center;
+        font-family: 'Barlow', sans-serif;
+        font-size: 1.5rem;
+    margin: 2%;}
+
+    h2, h3, h4{color:cadetblue; 
+        background-color: beige;
+        font-family: 'Barlow', sans-serif;
+         font-size: 1.5rem;
+    text-align: center;
+padding: 1rem;
+margin: 4%;
+}
+
+        p {color: whitesmoke;
+            text-align: left;
+        font-size: 1.4rem;
+    padding: 1rem;
+margin: 4%;}
+        footer {text-align: center;
+            font-size: 1rem;
+            background-color: rgb(173, 181, 255);
+            padding: 1rem;}

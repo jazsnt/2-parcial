@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio - Arte generativo y sistemas</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" 
+rel="stylesheet">
+
+<link rel="stylesheet" href="css/estilos.css">
+
+</head>
+
+<body>
+
+  <div class="contenedor">
+
+    <header class="encabezado">
+    <h1>Casey Reas</h1> 
+    <h2>Código, sistemas y arte generativo contemporáneo</h2>
+</header>
+
+ <!-- Menu de navegacion: igual en las 3 paginas -->
+    <nav class="menu">
+      <ul>
+        <li><a href="index.html" class="activo">Inicio</a></li>
+        <li><a href="trayectoria.html">Trayectoria</a></li>
+        <li><a href="produccion.html">Producción</a></li>
+      </ul>
+    </nav>
+
+
+<main>
+
+      <!-- Cita destacada del artista -->
+      <section class="hero">
+        <blockquote>
+          "Una obra puede ser definida como un sistema y ejecutada en múltiples formas."
+          <cite>— Casey Reas</cite>
+        </blockquote>
+      </section>
+
+      <!-- Layout de 3 columnas del mismo ancho -->
+      <section class="columnas">
+
+ <article class="columna">
+          <h2>Arte generativo y pensamiento computacional</h2>
+          <p>Casey Reas es un artista, programador y educador reconocido por su trabajo en el desarrollo del <strong>arte generativo</strong>. Su práctica se basa en la creación de sistemas que, a partir de reglas definidas, producen imágenes y comportamientos visuales autónomos.</p>
+          <p>Su trabajo se centra en la relación entre instrucciones, ejecución y resultado. A través del uso del código, construye estructuras que permiten explorar variaciones infinitas dentro de un mismo sistema.</p>
+          <p>Además de su producción artística, ha tenido un rol clave en la difusión del pensamiento computacional dentro del arte contemporáneo.</p>
+        </article>
+
+        <article class="columna">
+          <h2>El código como sistema visual</h2>
+          <p>El enfoque de Casey Reas se basa en la creación de instrucciones que definen comportamientos visuales. En lugar de diseñar una imagen de forma directa, desarrolla algoritmos que determinan cómo los elementos se relacionan, se mueven y evolucionan en el tiempo.</p>
+          <p>A partir de reglas simples, sus sistemas pueden generar resultados complejos e impredecibles. Esta lógica permite explorar la <em>emergencia</em>, donde patrones y formas surgen de la interacción entre componentes.</p>
+        </article>
+        <article class="columna">
+          <h2>Sistemas, reglas y variación</h2>
+          <p>El trabajo de Casey Reas se fundamenta en la idea de que una obra puede ser entendida como un sistema de reglas. Estas reglas definen las posibles interacciones entre los elementos visuales, permitiendo que la obra se genere a partir de su ejecución.</p>
+          <p>Este enfoque introduce la <strong>variación</strong> como un elemento central. Cada vez que el sistema se ejecuta, puede producir un resultado diferente.</p>
+        </article>
+
+        </section>
+         <!-- Galeria de obras java -->
+      <section class="galeria" id="seccion-galeria">
+        <h2>Galería de obras</h2>
+        <p class="instrucciones">Las obras se cargan automáticamente. Usá el botón para cambiar el diseño de la galería.</p>
+
+        <button id="btn-cambio-diseno" type="button">Cambiar diseño de la galería</button>
+
+        <!-- Este contenedor lo completa js/galeria.js -->
+        <div id="galeria-obras" class="galeria-obras">
+          <!-- las obras se insertan dinamicamente desde JavaScript -->
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Pie de pagina: igual en las 3 paginas -->
+    <footer class="pie">
+      <p>Contacto: <a href="mailto:casey@artedigital.com">casey@artedigital.com</a></p>
+    </footer>
+
+  </div>
+
+  <!-- Solo se linkea el JS que esta pagina necesita-->
+  <script src="js/galeria.js"></script>
+</body>
+</html>
+
+
+
+
