@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Inicio - Arte generativo y sistemas</title>
+  <title>Arte generativo y sistemas</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,8 +16,6 @@ rel="stylesheet">
 
 <body>
 
-<main>
-  
   <div class="contenedor">
 
     <header class="encabezado">
@@ -71,10 +69,14 @@ rel="stylesheet">
          <!-- Galeria de obras java -->
       <section class="galeria" id="seccion-galeria">
         <h2>Galería de obras</h2>
-        <img src="imagenes/intro-2-resized.jpg" alt="Obra de Casey Reas" class="foto-galeria">
-        <p class="instrucciones">Las obras se cargan automáticamente. Usá el botón para cambiar el diseño de la galería.</p>
 
-        <button id="btn-cambio-diseno" type="button">Cambiar diseño de la galería</button>
+        <div class="galeria-intro">
+          <img src="imagenes/intro-2-resized.jpg" alt="Obra de Casey Reas" class="foto-galeria">
+          <div class="texto-galeria">
+            <p class="instrucciones">Las obras se cargan automáticamente. Usá el botón para cambiar el diseño de la galería.</p>
+            <button id="btn-cambio-diseno" type="button">Cambiar diseño de la galería</button>
+          </div>
+        </div>
 
         <!-- Este contenedor lo completa js/galeria.js -->
         <div id="galeria-obras" class="galeria-obras">
@@ -90,12 +92,8 @@ rel="stylesheet">
     </footer>
 
   </div>
-</main>
+
   <!-- Solo se linkea el JS que esta pagina necesita-->
   <script src="js/galeria.js"></script>
 </body>
 </html>
-
-
-
-

@@ -7,13 +7,18 @@
   box-sizing: border-box;
 }
 
+/* Aumenta el tamano base de la letra en todo el sitio (1rem = 18px en vez de 16px) */
+html {
+  font-size: 112.5%;
+}
+
 /* ===========================================
    Base del body
    =========================================== */
 body {
   /* TODO: reemplazar por la imagen de fondo real entregada en los materiales */
-background-image: url("../imagenes/fondo.png");
- 
+  background-image: url("../imagenes/fondo.png");
+
   background-attachment: fixed;
   background-position: center;
 
@@ -26,12 +31,22 @@ background-image: url("../imagenes/fondo.png");
   line-height: 1.6;
 }
 
-
 /* Titulos y elementos destacados usan la tipografia de Google (solo aqui) */
 h1, h2, h3,
 .tagline,
+strong,
+em,
+legend,
 blockquote cite {
-  font-family: ;
+  font-family: "Arvo", serif;
+}
+
+/* Main: da espacio arriba/abajo entre las secciones de contenido
+   (hero, columnas, galeria / dos-columnas / formularios) */
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 /*  Contenedor general: centra todo el sitio
@@ -73,8 +88,10 @@ blockquote cite {
   font-size: 2.5rem;
 }
 
+.encabezado h2,
 .tagline {
   font-size: 1rem;
+  font-weight: normal;
   margin-top: 0.5rem;
 }
 
@@ -120,6 +137,14 @@ blockquote cite {
   font-size: 1rem;
 }
 
+.foto-hero {
+  width: 100%;
+  max-width: 30rem;
+  border-radius: 0.75rem;
+  margin: 1rem auto 0;
+  display: block;
+}
+
 /* ===========================================
    Layout de 3 columnas iguales (pagina de inicio)
    requisito punto 3 y punto 15 (flexbox)
@@ -130,8 +155,6 @@ blockquote cite {
   flex-wrap: wrap;
   gap: 1.5rem;
 }
-
-
 
 .columna {
   flex: 1 1 30%;
@@ -155,12 +178,33 @@ blockquote cite {
   padding: 1.5rem;
 }
 
+/* Imagen de la galeria al lado del texto/boton */
+.galeria-intro {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.foto-galeria {
+  flex: 1 1 12rem;
+  max-width: 16rem;
+  width: 100%;
+  border-radius: 0.75rem;
+}
+
+.texto-galeria {
+  flex: 2 1 20rem;
+}
+
 .galeria-obras {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   gap: 1rem;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 }
 
 /* ===========================================
@@ -191,16 +235,31 @@ blockquote cite {
 .columna-principal h2 {
   font-size: 1.4rem;
   margin-bottom: 1rem;
+  flex: 1 1 100%;
 }
 
 .columna-principal p {
   margin-bottom: 1rem;
 }
 
+/* Cada articulo se acomoda en fila: foto al lado del texto */
+.columna-principal article {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.texto-articulo {
+  flex: 2 1 20rem;
+}
+
 .foto-articulo {
+  flex: 1 1 12rem;
   width: 100%;
+  max-width: 16rem;
   border-radius: 0.75rem;
-  margin-bottom: 1rem;
 }
 
 .conceptos-clave ul {
@@ -233,7 +292,6 @@ blockquote cite {
 }
 
 .formulario-paso legend {
-  font-family: "Space Mono", monospace;
   font-size: 1.2rem;
   margin-bottom: 1rem;
 }
@@ -295,7 +353,9 @@ button:disabled {
    =========================================== */
 @media (max-width: 48rem) {
   .columnas,
-  .dos-columnas {
+  .dos-columnas,
+  .columna-principal article,
+  .galeria-intro {
     flex-direction: column;
   }
 
@@ -303,5 +363,10 @@ button:disabled {
   .columna-principal,
   .columna-sidebar {
     flex: 1 1 100%;
+  }
+
+  .foto-articulo,
+  .foto-galeria {
+    max-width: 100%;
   }
 }
