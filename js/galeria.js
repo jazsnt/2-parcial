@@ -1,5 +1,7 @@
-/* Genera la galeria de obras de Casey Reas
-   y permite cambiar su diseño */
+/* ===========================================
+   Genera la galeria de obras de Casey Reas
+   y permite cambiar su diseño
+   =========================================== */
 
 // Array de objetos: cada objeto es una obra con
 // su archivo de imagen, nombre y año
@@ -15,45 +17,60 @@ const obras = [
 const contenedorGaleria = document.querySelector("#galeria-obras");
 const btnCambioDiseno = document.querySelector("#btn-cambio-diseno");
 
-// Recorre el array de obras y arma la galeria en el DOM
+// Guarda si el diseño alternativo esta activado o no
+let disenoAlternativo = false;
+
+// Recorre el array de obras y arma el HTML de la galeria
 function mostrarGaleria() {
+  let html = "";
+
   for (let i = 0; i < obras.length; i++) {
     const obra = obras[i];
 
-    // Tarjeta contenedora de cada obra
-    const tarjeta = document.createElement("div");
-    tarjeta.classList.add("obra");
-
-    // Imagen de la obra
-    const imagen = document.createElement("img");
-    imagen.src = "imagenes/" + obra.archivo;
-    imagen.alt = obra.nombre;
-    imagen.classList.add("obra-imagen");
-
-    // Nombre de la obra
-    const nombre = document.createElement("p");
-    nombre.classList.add("obra-nombre");
-    nombre.textContent = obra.nombre;
-
-    // Año de la obra
-    const anio = document.createElement("p");
-    anio.classList.add("obra-anio");
-    anio.textContent = obra.anio;
-
-    // Armamos la tarjeta y la agregamos a la galeria
-    tarjeta.appendChild(imagen);
-    tarjeta.appendChild(nombre);
-    tarjeta.appendChild(anio);
-    contenedorGaleria.appendChild(tarjeta);
+    html = html + "<div class='obra'>";
+    html = html + "<img src='imagenes/" + obra.archivo + "' alt='" + obra.nombre + "' class='obra-imagen'>";
+    html = html + "<p class='obra-nombre'>" + obra.nombre + "</p>";
+    html = html + "<p class='obra-anio'>" + obra.anio + "</p>";
+    html = html + "</div>";
   }
+
+  contenedorGaleria.innerHTML = html;
 }
 
 mostrarGaleria();
 
-// Cambia el diseño de la galeria (tamaño de imagenes y colores)
-// agregando/sacando una clase que esta definida en el CSS
+// Cambia el diseño de la galeria: alterna el tamaño de las
+// imagenes y los colores del texto
 function cambiarDiseno() {
-  contenedorGaleria.classList.toggle("galeria-obras-alt");
+  disenoAlternativo = !disenoAlternativo;
+
+  const imagenes = document.querySelectorAll(".obra-imagen");
+  const nombres = document.querySelectorAll(".obra-nombre");
+  const anios = document.querySelectorAll(".obra-anio");
+
+  for (let i = 0; i < imagenes.length; i++) {
+    if (disenoAlternativo) {
+      imagenes[i].style.width = "20rem";
+      imagenes[i].style.borderRadius = "0";
+    } else {
+      imagenes[i].style.width = "12rem";
+      imagenes[i].style.borderRadius = "0.75rem";
+    }
+  }
+
+  for (let i = 0; i < nombres.length; i++) {
+    if (disenoAlternativo) {
+      nombres[i].style.color = "rgb(70, 40, 57)";
+      nombres[i].style.backgroundColor = "rgb(212, 210, 211)";
+      anios[i].style.color = "rgb(70, 40, 57)";
+      anios[i].style.backgroundColor = "rgb(212, 210, 211)";
+    } else {
+      nombres[i].style.color = "";
+      nombres[i].style.backgroundColor = "";
+      anios[i].style.color = "";
+      anios[i].style.backgroundColor = "";
+    }
+  }
 }
 
 btnCambioDiseno.addEventListener("click", cambiarDiseno);

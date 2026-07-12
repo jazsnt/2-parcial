@@ -1,7 +1,10 @@
-/* Ejercicio: Gestion de produccion de instalaciones
-   del estudio de Casey Reas*/
+/* ===========================================
+   produccion.js
+   Ejercicio: Gestion de produccion de instalaciones
+   del estudio de Casey Reas
+   =========================================== */
 
-/*Variables globales*/
+/* ---------- Variables globales ---------- */
 
 // Cantidad de instalaciones que el usuario indico que va a cargar
 let cantidadInstalaciones = 0;
@@ -14,7 +17,7 @@ let instalaciones = [];
 let horasPorDia = 0;
 let valorHora = 0;
 
-/*  Referencias a elementos del DOM  */
+/* ---------- Referencias a elementos del DOM ---------- */
 
 const inputCantidad = document.querySelector("#input-cantidad-instalaciones");
 const btnConfirmarCantidad = document.querySelector("#btn-confirmar-cantidad");
@@ -58,11 +61,11 @@ function confirmarCantidad() {
   const valor = inputCantidad.value;
 
   if (!esNumeroPositivo(valor)) {
-    errorCantidad.textContent = "Ingresá un número mayor a 0.";
+    errorCantidad.innerText = "Ingresá un número mayor a 0.";
     return;
   }
 
-  errorCantidad.textContent = "";
+  errorCantidad.innerText = "";
   cantidadInstalaciones = Number(valor);
 
   // Se deshabilita este paso porque ya se confirmo
@@ -71,7 +74,7 @@ function confirmarCantidad() {
 
   // Se habilita el paso siguiente
   fieldsetInstalacion.disabled = false;
-  contadorInstalaciones.textContent = "Instalaciones cargadas: 0 de " + cantidadInstalaciones;
+  contadorInstalaciones.innerText = "Instalaciones cargadas: 0 de " + cantidadInstalaciones;
 }
 
 btnConfirmarCantidad.addEventListener("click", confirmarCantidad);
@@ -84,11 +87,11 @@ function agregarInstalacion() {
   const dias = inputDias.value;
 
   if (nombre === "" || !esNumeroPositivo(personas) || !esNumeroPositivo(dias)) {
-    errorInstalacion.textContent = "Completá el nombre, las personas y los días correctamente.";
+    errorInstalacion.innerText = "Completá el nombre, las personas y los días correctamente.";
     return;
   }
 
-  errorInstalacion.textContent = "";
+  errorInstalacion.innerText = "";
 
   // Armamos el objeto de la instalacion y lo agregamos al array
   const nuevaInstalacion = {
@@ -103,7 +106,7 @@ function agregarInstalacion() {
   inputPersonas.value = "";
   inputDias.value = "";
 
-  contadorInstalaciones.textContent = "Instalaciones cargadas: " + instalaciones.length + " de " + cantidadInstalaciones;
+  contadorInstalaciones.innerText = "Instalaciones cargadas: " + instalaciones.length + " de " + cantidadInstalaciones;
 
   // Si ya se completo la cantidad indicada, se deshabilita este paso
   // y se habilita el paso de datos generales
@@ -122,11 +125,11 @@ function confirmarDatosGenerales() {
   const valor = inputValorHora.value;
 
   if (!esNumeroPositivo(horas) || !esNumeroPositivo(valor)) {
-    errorDatosGenerales.textContent = "Ingresá valores mayores a 0 en ambos campos.";
+    errorDatosGenerales.innerText = "Ingresá valores mayores a 0 en ambos campos.";
     return;
   }
 
-  errorDatosGenerales.textContent = "";
+  errorDatosGenerales.innerText = "";
   horasPorDia = Number(horas);
   valorHora = Number(valor);
 
@@ -170,9 +173,9 @@ function calcularResultados() {
   // 3. Porcentaje que representa esa instalacion sobre el costo total
   const porcentaje = (costoInstalacionMasDias / costoTotalEstudio) * 100;
 
-  resultadoCostoDia.textContent = "Costo de un día de trabajo del estudio: $" + Math.round(costoUnDia);
-  resultadoMasDias.textContent = "Instalación con más días de producción: " + instalacionMasDias.nombre + " (" + instalacionMasDias.dias + " días) - Costo total: $" + Math.round(costoInstalacionMasDias);
-  resultadoPorcentaje.textContent = "Representa el " + Math.round(porcentaje) + "% del costo total del estudio.";
+  resultadoCostoDia.innerText = "Costo de un día de trabajo del estudio: $" + Math.round(costoUnDia);
+  resultadoMasDias.innerText = "Instalación con más días de producción: " + instalacionMasDias.nombre + " (" + instalacionMasDias.dias + " días) - Costo total: $" + Math.round(costoInstalacionMasDias);
+  resultadoPorcentaje.innerText = "Representa el " + Math.round(porcentaje) + "% del costo total del estudio.";
 
   seccionResultados.hidden = false;
   btnCalcular.disabled = true;
@@ -198,9 +201,9 @@ function reiniciar() {
   inputValorHora.value = "";
 
   // Limpiamos mensajes de error
-  errorCantidad.textContent = "";
-  errorInstalacion.textContent = "";
-  errorDatosGenerales.textContent = "";
+  errorCantidad.innerText = "";
+  errorInstalacion.innerText = "";
+  errorDatosGenerales.innerText = "";
 
   // Volvemos a habilitar el paso 1 y deshabilitar los siguientes
   inputCantidad.disabled = false;
@@ -209,7 +212,7 @@ function reiniciar() {
   fieldsetDatosGenerales.disabled = true;
   btnCalcular.disabled = true;
 
-  contadorInstalaciones.textContent = "Instalaciones cargadas: 0 de 0";
+  contadorInstalaciones.innerText = "Instalaciones cargadas: 0 de 0";
 
   // Ocultamos los resultados
   seccionResultados.hidden = true;
