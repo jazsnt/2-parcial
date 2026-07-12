@@ -207,6 +207,42 @@ main {
   margin-top: 1.5rem;
 }
 
+/* Cada tarjeta de obra dentro de la galeria */
+.obra {
+  flex: 1 1 10rem;
+  max-width: 12rem;
+  text-align: center;
+}
+
+.obra-imagen {
+  width: 100%;
+  border-radius: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.obra-nombre {
+  font-weight: bold;
+}
+
+.obra-anio {
+  font-size: 0.9rem;
+}
+
+/* Diseño alternativo de la galeria (requisito punto 23) */
+.galeria-obras-alt .obra {
+  max-width: 20rem;
+}
+
+.galeria-obras-alt .obra-imagen {
+  border-radius: 0;
+}
+
+.galeria-obras-alt .obra-nombre,
+.galeria-obras-alt .obra-anio {
+  color: rgb(70, 40, 57);
+  background-color: rgb(212, 210, 211);
+}
+
 /* ===========================================
    Layout de 2 columnas de ancho diferente
    (pagina de trayectoria) - requisito punto 4
