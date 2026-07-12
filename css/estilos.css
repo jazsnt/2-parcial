@@ -1,100 +1,307 @@
-/* hoja de estilos */
-body { margin: 0;
-    background-image: url('../imagenes/fondo.png');}
+/*  Hoja de estilos comun a las 3 paginas */
 
-.box{background-color: rgb(196, 136, 171);
-      margin: 0 auto;
-    max-width: 1200px; }
-
-.cont, .cont2, .cont3, .cont4, .cont5
- {
-    display: flex;
-    align-items: center;
-}
-.cont img, .cont3 img, .cont4 img {
-    padding: 2%;
-    width: 50%;
-    margin: 5%;
-}
-.cont2 img {
-    padding: 2%;
-    width: 50%;
-    margin-bottom: 5%;
-    margin-right: 5%;
-}
-.cont2 section 
-{
-    padding: 2%;
-    width: 50%  ; 
+/* Reset basico: sacamos margenes y padding por defecto del navegador */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.cont section, .cont3 section, .cont4 section {
-    padding: 2%;
-    width: 50%  ;
-        margin: 5%;
-        
+/* ===========================================
+   Base del body
+   =========================================== */
+body {
+  /* TODO: reemplazar por la imagen de fondo real entregada en los materiales */
+background-image: url("../imagenes/fondo.png");
+ 
+  background-attachment: fixed;
+  background-position: center;
+
+  /* margen para que se vea el fondo alrededor del contenido */
+  padding: 2rem 1rem;
+
+  font-family: "Times New Roman", Times, serif;
+  color: rgb(212, 210, 211);
+
+  line-height: 1.6;
 }
 
 
-.cont5 {
-    padding: 2%;
-    width: 92%;
-    
+/* Titulos y elementos destacados usan la tipografia de Google (solo aqui) */
+h1, h2, h3,
+.tagline,
+blockquote cite {
+  font-family: ;
+}
+
+/*  Contenedor general: centra todo el sitio
+   y define un ancho maximo */
+.contenedor {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  max-width: 75rem;
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* Caja generica: fondo, bordes redondeados,
+   padding. Se aplica a header, nav, footer,
+   secciones y articulos "sueltos" */
+.encabezado,
+.menu,
+.pie,
+.hero,
+.columna,
+.formulario-paso,
+.resultados,
+.columna-principal article,
+.columna-sidebar section,
+.intro-ejercicio {
+  background-color: rgb(70, 40, 57);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+}
+
+/* Encabezado */
+.encabezado {
+  text-align: center;
+}
+
+.encabezado h1 {
+  font-size: 2.5rem;
+}
+
+.tagline {
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+/* ===========================================
+   Menu de navegacion horizontal
+   =========================================== */
+.menu ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+}
+
+.menu a {
+  color: rgb(212, 210, 211);
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.menu a:hover {
+  background-color: rgba(212, 210, 211, 0.15);
+}
+
+.menu a.activo {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+/* ===========================================
+   Cita destacada (pagina de inicio)
+   =========================================== */
+.hero blockquote {
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.hero cite {
+  display: block;
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+/* ===========================================
+   Layout de 3 columnas iguales (pagina de inicio)
+   requisito punto 3 y punto 15 (flexbox)
+   =========================================== */
+.columnas {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1.5rem;
 }
 
 
-h1 {
-    margin-bottom: 4%;
-    color: rgb(16, 17, 77);
-    background-color: rgb(173, 181, 255);
-    text-align: center;
-    font-family: 'Barlow', sans-serif;
-    font-size: 3rem;
-padding: 4rem;}
 
-    ul{ font-style: oblique;
-        list-style: none;
-        display: flex; 
-        justify-content: center;
-         font-size: 1.5rem; 
-         background-color: rgb(173, 181, 255);
-          gap: 8rem; 
-        padding: 1rem;
-    margin-left: 8%;
-margin-right: 8%;}
-
-ul li a:hover{color: rgb(235, 93, 178);}
-
-footer a {color: rgb(123, 124, 181);
-            text-decoration: none;
-            font-weight: bold;}
-          footer a:hover {color: rgb(143, 47, 158);
-            text-decoration: none;
-            font-weight: bold;}
-         
-               
-    
-    .azul {color: rgb(16, 17, 77);
-        text-align: center;
-        font-family: 'Barlow', sans-serif;
-        font-size: 1.5rem;
-    margin: 2%;}
-
-    h2, h3, h4{color:cadetblue; 
-        background-color: beige;
-        font-family: 'Barlow', sans-serif;
-         font-size: 1.5rem;
-    text-align: center;
-padding: 1rem;
-margin: 4%;
+.columna {
+  flex: 1 1 30%;
 }
 
-        p {color: whitesmoke;
-            text-align: left;
-        font-size: 1.4rem;
-    padding: 1rem;
-margin: 4%;}
-        footer {text-align: center;
-            font-size: 1rem;
-            background-color: rgb(173, 181, 255);
-            padding: 1rem;}
+.columna h2 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.columna p {
+  margin-bottom: 1rem;
+}
+
+/* ===========================================
+   Galeria de obras (pagina de inicio)
+   =========================================== */
+.galeria {
+  background-color: rgb(70, 40, 57);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+}
+
+.galeria-obras {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* ===========================================
+   Layout de 2 columnas de ancho diferente
+   (pagina de trayectoria) - requisito punto 4
+   =========================================== */
+.dos-columnas {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.columna-principal {
+  flex: 2 1 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.columna-sidebar {
+  flex: 1 1 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.columna-principal h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.columna-principal p {
+  margin-bottom: 1rem;
+}
+
+.foto-articulo {
+  width: 100%;
+  border-radius: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.conceptos-clave ul {
+  list-style: none;
+  margin-top: 0.75rem;
+}
+
+.conceptos-clave li {
+  padding: 0.4rem 0;
+}
+
+.dato-curioso button {
+  margin-top: 1rem;
+}
+
+/* ===========================================
+   Pagina de produccion (ejercicio JS)
+   =========================================== */
+.instrucciones {
+  margin-top: 1rem;
+}
+
+.instrucciones ol {
+  margin-left: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.formulario-paso fieldset {
+  border: none;
+}
+
+.formulario-paso legend {
+  font-family: "Space Mono", monospace;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.formulario-paso label {
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 0.3rem;
+}
+
+.formulario-paso input {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.mensaje-error {
+  color: rgb(230, 150, 150);
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* ===========================================
+   Botones (comunes a todo el sitio)
+   =========================================== */
+button {
+  background-color: rgb(212, 210, 211);
+  color: rgb(70, 40, 57);
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  margin-top: 1rem;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ===========================================
+   Pie de pagina
+   =========================================== */
+.pie {
+  text-align: center;
+}
+
+.pie a {
+  color: rgb(212, 210, 211);
+}
+
+/* ===========================================
+   Responsive: en pantallas chicas, las columnas
+   pasan a ocupar todo el ancho
+   =========================================== */
+@media (max-width: 48rem) {
+  .columnas,
+  .dos-columnas {
+    flex-direction: column;
+  }
+
+  .columna,
+  .columna-principal,
+  .columna-sidebar {
+    flex: 1 1 100%;
+  }
+}
