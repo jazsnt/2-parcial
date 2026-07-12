@@ -1,8 +1,5 @@
-/* ===========================================
-   galeria.js
-   Genera la galeria de obras de Casey Reas
-   y permite cambiar su diseño
-   =========================================== */
+/* Genera la galeria de obras de Casey Reas
+   y permite cambiar su diseño */
 
 // Array de objetos: cada objeto es una obra con
 // su archivo de imagen, nombre y año

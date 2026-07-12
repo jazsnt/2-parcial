@@ -1,10 +1,7 @@
-/* ===========================================
-   produccion.js
-   Ejercicio: Gestion de produccion de instalaciones
-   del estudio de Casey Reas
-   =========================================== */
+/* Ejercicio: Gestion de produccion de instalaciones
+   del estudio de Casey Reas*/
 
-/* ---------- Variables globales ---------- */
+/*Variables globales*/
 
 // Cantidad de instalaciones que el usuario indico que va a cargar
 let cantidadInstalaciones = 0;
@@ -17,7 +14,7 @@ let instalaciones = [];
 let horasPorDia = 0;
 let valorHora = 0;
 
-/* ---------- Referencias a elementos del DOM ---------- */
+/*  Referencias a elementos del DOM  */
 
 const inputCantidad = document.querySelector("#input-cantidad-instalaciones");
 const btnConfirmarCantidad = document.querySelector("#btn-confirmar-cantidad");

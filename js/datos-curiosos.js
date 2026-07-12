@@ -1,9 +1,5 @@
-/* ===========================================
-   dato-curioso.js
-   Muestra un dato curioso al azar sobre Casey Reas
-   =========================================== */
+/*  Muestra un dato curioso al azar sobre Casey Reas*/
 
-// Array con los datos curiosos (texto.txt)
 const datosCuriosos = [
   "Casey Reas es co-creador de Processing, un lenguaje de programación visual diseñado para artistas y estudiantes de diseño.",
   "Junto a Ben Fry desarrolló Processing como una herramienta educativa en el MIT Media Lab en 2001.",

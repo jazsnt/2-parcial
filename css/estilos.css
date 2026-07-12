@@ -1,29 +1,24 @@
-/*  Hoja de estilos comun a las 3 paginas */
+/*  Hoja de estilos para las 3 paginas */
 
-/* Reset basico: sacamos margenes y padding por defecto del navegador */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Aumenta el tamano base de la letra en todo el sitio (1rem = 18px en vez de 16px) */
 html {
-  font-size: 112.5%;
+  font-size: 1.2rem;
 }
 
-/* ===========================================
-   Base del body
-   =========================================== */
+/*   Base del body */
 body {
-  /* TODO: reemplazar por la imagen de fondo real entregada en los materiales */
   background-image: url("../imagenes/fondo.png");
 
   background-attachment: fixed;
   background-position: center;
 
   /* margen para que se vea el fondo alrededor del contenido */
-  padding: 2rem 1rem;
+  padding: 1rem;
 
   font-family: "Times New Roman", Times, serif;
   color: rgb(212, 210, 211);
@@ -95,9 +90,7 @@ main {
   margin-top: 0.5rem;
 }
 
-/* ===========================================
-   Menu de navegacion horizontal
-   =========================================== */
+/* Menu de navegacion horizontal */
 .menu ul {
   display: flex;
   flex-direction: row;
@@ -107,7 +100,7 @@ main {
 }
 
 .menu a {
-  color: rgb(212, 210, 211);
+  color: rgb(240, 185, 212);
   text-decoration: none;
   font-size: 1.1rem;
   padding: 0.5rem 1rem;
@@ -115,7 +108,7 @@ main {
 }
 
 .menu a:hover {
-  background-color: rgba(212, 210, 211, 0.15);
+  background-color: rgba(201, 29, 115, 0.15);
 }
 
 .menu a.activo {
@@ -123,9 +116,7 @@ main {
   font-weight: bold;
 }
 
-/* ===========================================
-   Cita destacada (pagina de inicio)
-   =========================================== */
+/*    Cita destacada (pagina de inicio */
 .hero blockquote {
   font-size: 1.3rem;
   text-align: center;
@@ -145,10 +136,7 @@ main {
   display: block;
 }
 
-/* ===========================================
-   Layout de 3 columnas iguales (pagina de inicio)
-   requisito punto 3 y punto 15 (flexbox)
-   =========================================== */
+/* Layout de 3 columnas iguales (pagina de inicio) */
 .columnas {
   display: flex;
   flex-direction: row;
@@ -169,9 +157,7 @@ main {
   margin-bottom: 1rem;
 }
 
-/* ===========================================
-   Galeria de obras (pagina de inicio)
-   =========================================== */
+/*   Galeria de obras (pagina de inicio */
 .galeria {
   background-color: rgb(70, 40, 57);
   border-radius: 0.75rem;
@@ -228,7 +214,7 @@ main {
   font-size: 0.9rem;
 }
 
-/* Diseño alternativo de la galeria (requisito punto 23) */
+/* Diseño alternativo de la galeria */
 .galeria-obras-alt .obra {
   max-width: 20rem;
 }
@@ -243,10 +229,8 @@ main {
   background-color: rgb(212, 210, 211);
 }
 
-/* ===========================================
-   Layout de 2 columnas de ancho diferente
-   (pagina de trayectoria) - requisito punto 4
-   =========================================== */
+/*   Layout de 2 columnas de ancho diferente
+   (pagina de trayectoria) */
 .dos-columnas {
   display: flex;
   flex-direction: row;
@@ -311,9 +295,7 @@ main {
   margin-top: 1rem;
 }
 
-/* ===========================================
-   Pagina de produccion (ejercicio JS)
-   =========================================== */
+/*    Pagina de produccion (ejercicio JS) */
 .instrucciones {
   margin-top: 1rem;
 }
@@ -352,9 +334,7 @@ main {
   font-size: 0.9rem;
 }
 
-/* ===========================================
-   Botones (comunes a todo el sitio)
-   =========================================== */
+/*  Botones (comunes a todo el sitio) */
 button {
   background-color: rgb(212, 210, 211);
   color: rgb(70, 40, 57);
@@ -372,9 +352,7 @@ button:disabled {
   cursor: not-allowed;
 }
 
-/* ===========================================
-   Pie de pagina
-   =========================================== */
+/*    Pie de pagina */
 .pie {
   text-align: center;
 }
@@ -383,10 +361,8 @@ button:disabled {
   color: rgb(212, 210, 211);
 }
 
-/* ===========================================
-   Responsive: en pantallas chicas, las columnas
-   pasan a ocupar todo el ancho
-   =========================================== */
+/*  Responsive: en pantallas chicas, las columnas
+   pasan a ocupar todo el ancho */
 @media (max-width: 48rem) {
   .columnas,
   .dos-columnas,
